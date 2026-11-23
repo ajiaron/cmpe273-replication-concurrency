@@ -1,0 +1,42 @@
+=== Scenario 1: Successful Replication ===
+
+Initial state:
+Primary stock: 10
+Secondary stock: 10
+
+[WRITE] Primary stock updated to 12
+[REPLICATION] Update queued
+[REPLICATION] Secondary applied stock = 12
+
+Primary read: 12
+Secondary read: 12
+
+[PASS] Both replicas contain the same value.
+
+[WRITE] Primary stock updated to 10
+[REPLICATION] Update queued
+[REPLICATION] Secondary applied stock = 10
+=== Scenario 2: Stale Read ===
+
+[REPLICATION] Paused
+[WRITE] Primary stock updated to 9
+[REPLICATION] Update queued
+
+Primary read: 9
+Secondary read: 10
+
+[STALE READ] Secondary has not received the latest update.
+[PASS] Stale read successfully demonstrated.
+
+=== Scenario 3: Recovery and Convergence ===
+
+[REPLICATION] Resumed
+[REPLICATION] Secondary applied stock = 9
+
+Primary read: 9
+Secondary read: 9
+
+[PASS] Both replicas have converged.
+[PASS] Eventual consistency successfully demonstrated.
+
+=== All 3 Scenarios Passed ===

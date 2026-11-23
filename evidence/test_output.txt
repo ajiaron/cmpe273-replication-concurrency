@@ -1,0 +1,16 @@
+test_replication_worker_shuts_down_cleanly (test_replication.TestCleanShutdown.test_replication_worker_shuts_down_cleanly) ... ok
+test_replicas_maintain_independent_state (test_replication.TestIndependentState.test_replicas_maintain_independent_state) ... ok
+test_both_replicas_start_with_same_inventory (test_replication.TestInitialState.test_both_replicas_start_with_same_inventory) ... ok
+test_multiple_queued_updates_applied_in_order (test_replication.TestOrderedUpdates.test_multiple_queued_updates_applied_in_order) ... ok
+test_pending_updates_not_lost_while_paused (test_replication.TestPauseAndStaleRead.test_pending_updates_not_lost_while_paused) ... ok
+test_primary_remains_writable_while_paused (test_replication.TestPauseAndStaleRead.test_primary_remains_writable_while_paused) ... ok
+test_replication_can_be_paused (test_replication.TestPauseAndStaleRead.test_replication_can_be_paused) ... ok
+test_secondary_returns_stale_value_while_paused (test_replication.TestPauseAndStaleRead.test_secondary_returns_stale_value_while_paused) ... ok
+test_write_updates_primary (test_replication.TestPrimaryWrite.test_write_updates_primary) ... ok
+test_resume_causes_replicas_to_converge (test_replication.TestRecoveryAndConvergence.test_resume_causes_replicas_to_converge) ... ok
+test_primary_update_eventually_propagates (test_replication.TestSuccessfulReplication.test_primary_update_eventually_propagates) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.187s
+
+OK
